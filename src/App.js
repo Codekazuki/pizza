@@ -1,11 +1,6 @@
-import "./index.css";
-
 function App() {
-  return (
-    <div className='App'>
-      <h1>hello</h1>
-    </div>
-  );
+  let names = "Daniel and David";
+  return <h1>{names}</h1>;
 }
 
 export default App;
