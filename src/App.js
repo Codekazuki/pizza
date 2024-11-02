@@ -1,6 +1,12 @@
 function App() {
   let names = "Daniel and David";
-  return <h1>{names}</h1>;
+  return (
+    <div>
+      <h1>{new Date().toLocaleTimeString()}</h1>
+
+      <h3>{names}</h3>
+    </div>
+  );
 }
 
 export default App;
