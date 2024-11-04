@@ -24,23 +24,23 @@ function App() {
   );
 }
 
-const Footer = (props) => {
+const Footer = ({ isOpen, message1, message2 }) => {
   return (
     <section>
       <h1>{new Date().toLocaleTimeString()}</h1>
-      {props.isOpen ? <h1>{props.message1}</h1> : <h1>{props.message2}</h1>}
+      {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
     </section>
   );
 };
 export default App;
 
-const Card = (props) => {
+const Card = ({ pizzaObj }) => {
   return (
-    <div>
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
-      <h2> {props.pizzaObj.name} </h2>
-      <h1>{props.pizzaObj.ingredients}</h1>
-      <h2>{props.pizzaObj.price}</h2>
+    <div className={`pizza ${pizzaObj.soldOut ? "sold-out" : ""} `}>
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
+      <h2> {pizzaObj.name} </h2>
+      <h1>{pizzaObj.ingredients}</h1>
+      <span>{pizzaObj.soldOut ? "SOLD OUT" : pizzaObj.price}</span>
     </div>
   );
 };
