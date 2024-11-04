@@ -16,12 +16,14 @@ function App() {
       {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
       {pizzaData.map((item) => {
         return (
-          <Card
-            key={item.name}
-            name={item.name}
-            image={item.photoName}
-            ingredients={item.ingredients}
-          />
+          <section key={item.name} className='pizza'>
+            <Card
+              name={item.name}
+              image={item.photoName}
+              ingredients={item.ingredients}
+              price={item.price}
+            />
+          </section>
         );
       })}
     </div>
@@ -35,8 +37,8 @@ const Card = (props) => {
     <div>
       <img src={props.image} alt={props.name} />
       <h3> {props.name} </h3>
-      <h1>{props.price}</h1>
       <h1>{props.ingredients}</h1>
+      <h2>{props.price}</h2>
     </div>
   );
 };
