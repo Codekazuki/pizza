@@ -14,7 +14,12 @@ body {
   padding: 25px 100px;
   margin: 100px auto;
 }
-
+.step2 {
+  background-color: rgb(172, 237, 172);
+}
+.step3 {
+  background-color: rgb(52, 241, 52);
+}
 .numbers {
   display: flex;
   justify-content: space-between;

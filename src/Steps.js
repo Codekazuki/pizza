@@ -1,18 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./steps.css";
 
 const messages = ["Learn React", "Apply for Jobs", "Invest your new income"];
 
 const Steps = () => {
+  const [step, setStep] = useState(1);
   const handleNext = () => {
-    console.log("next");
+    setStep((s) => s + 1);
   };
   const handlePrevious = () => {
-    console.log("previous");
+    setStep((s) => s - 1);
   };
-  let step = 1;
+
   return (
-    <div className='steps'>
+    <div
+      className={`${
+        step === 2 ? " steps step2" : step === 3 ? "steps step3" : "steps"
+      }`}
+    >
       <div className='numbers'>
         <div className={`${step >= 1 ? "active" : ""}`}>1</div>
         <div className={`${step >= 2 ? "active" : ""}`}>2</div>
@@ -20,7 +25,7 @@ const Steps = () => {
       </div>
       <p className='message'>
         {" "}
-        Step {step}: {messages[0]}
+        Step {step}: {messages[step - 1]}
       </p>
       <div className='buttons'>
         <button
