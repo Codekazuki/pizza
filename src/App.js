@@ -15,19 +15,15 @@ function App() {
       <h1>{new Date().toLocaleTimeString()}</h1>
       <h3>{names}</h3>
       {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
-      {pizzaData.map((item) => {
-        const { name, photoName, ingredients, price } = item;
-        return (
-          <li key={name} className='pizza'>
-            <Card
-              name={name}
-              image={photoName}
-              ingredients={ingredients}
-              price={price}
-            />
-          </li>
-        );
-      })}
+      <ul>
+        {pizzaData.map((pizzaObj) =>
+          pizzaObj.price < 10 ? (
+            <li key={pizzaObj.name} className='pizza'>
+              <Card pizzaObj={pizzaObj} />
+            </li>
+          ) : null
+        )}
+      </ul>
     </div>
   );
 }
@@ -37,10 +33,10 @@ export default App;
 const Card = (props) => {
   return (
     <div>
-      <img src={props.image} alt={props.name} />
-      <h3> {props.name} </h3>
-      <h1>{props.ingredients}</h1>
-      <h2>{props.price}</h2>
+      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+      <h2> {props.pizzaObj.name} </h2>
+      <h1>{props.pizzaObj.ingredients}</h1>
+      <h2>{props.pizzaObj.price}</h2>
     </div>
   );
 };
