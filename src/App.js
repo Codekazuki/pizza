@@ -11,18 +11,19 @@ function App() {
   const isOpen = hour >= openHour && hour <= closeHour;
   return (
     <div>
+      <SkillCard />
       <h1>{new Date().toLocaleTimeString()}</h1>
       <h3>{names}</h3>
       {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
       {pizzaData.map((item) => {
         return (
           <section key={item.name} className='pizza'>
-            <Card
+            {/* <Card
               name={item.name}
               image={item.photoName}
               ingredients={item.ingredients}
               price={item.price}
-            />
+            /> */}
           </section>
         );
       })}
@@ -41,4 +42,30 @@ const Card = (props) => {
       <h2>{props.price}</h2>
     </div>
   );
+};
+const SkillCard = () => {
+  return (
+    <section>
+      <Avatar />
+      <SkillList />
+    </section>
+  );
+};
+const SkillList = () => {
+  return (
+    <section>
+      <Skill name='html' emoji='✅' bgColor='yellow' />
+      <Skill name='css' emoji='💪' bgColor='green' />
+    </section>
+  );
+};
+const Skill = (props) => {
+  return (
+    <span style={{ backgroundColor: props.bgColor }}>
+      <span> {props.name}</span> <span>{props.emoji}</span>
+    </span>
+  );
+};
+const Avatar = () => {
+  return <img src='pizzas/funghi.jpg' alt='hello' style={{ height: "72px" }} />;
 };
