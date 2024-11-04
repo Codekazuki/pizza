@@ -2,7 +2,6 @@ import pizzaData from "./data";
 
 console.log(pizzaData);
 function App() {
-  let names = "Daniel and David";
   const message1 = "We are currently open ";
   const message2 = "We are currently closed";
   const hour = new Date().getHours();
@@ -12,9 +11,7 @@ function App() {
   return (
     <div>
       <SkillCard />
-      <h1>{new Date().toLocaleTimeString()}</h1>
-      <h3>{names}</h3>
-      {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
+
       <ul className='pizzas'>
         {pizzaData.map((pizzaObj) => (
           <li key={pizzaObj.name} className='pizza'>
@@ -22,10 +19,19 @@ function App() {
           </li>
         ))}
       </ul>
+      <Footer isOpen={isOpen} message1={message1} message2={message2} />
     </div>
   );
 }
 
+const Footer = (props) => {
+  return (
+    <section>
+      <h1>{new Date().toLocaleTimeString()}</h1>
+      {props.isOpen ? <h1>{props.message1}</h1> : <h1>{props.message2}</h1>}
+    </section>
+  );
+};
 export default App;
 
 const Card = (props) => {
