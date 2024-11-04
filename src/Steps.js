@@ -4,6 +4,12 @@ import "./steps.css";
 const messages = ["Learn React", "Apply for Jobs", "Invest your new income"];
 
 const Steps = () => {
+  const handleNext = () => {
+    console.log("next");
+  };
+  const handlePrevious = () => {
+    console.log("previous");
+  };
   let step = 1;
   return (
     <div className='steps'>
@@ -17,10 +23,16 @@ const Steps = () => {
         Step {step}: {messages[0]}
       </p>
       <div className='buttons'>
-        <button style={{ backgroundColor: "#7950f2", color: "white" }}>
+        <button
+          onClick={handlePrevious}
+          style={{ backgroundColor: "#7950f2", color: "white" }}
+        >
           Previous
         </button>
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          onClick={handleNext}
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+        >
           Next
         </button>
       </div>
