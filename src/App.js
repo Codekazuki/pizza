@@ -15,14 +15,12 @@ function App() {
       <h1>{new Date().toLocaleTimeString()}</h1>
       <h3>{names}</h3>
       {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
-      <ul>
-        {pizzaData.map((pizzaObj) =>
-          pizzaObj.price < 10 ? (
-            <li key={pizzaObj.name} className='pizza'>
-              <Card pizzaObj={pizzaObj} />
-            </li>
-          ) : null
-        )}
+      <ul className='pizzas'>
+        {pizzaData.map((pizzaObj) => (
+          <li key={pizzaObj.name} className='pizza'>
+            <Card pizzaObj={pizzaObj} />
+          </li>
+        ))}
       </ul>
     </div>
   );
