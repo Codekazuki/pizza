@@ -16,15 +16,16 @@ function App() {
       <h3>{names}</h3>
       {isOpen ? <h1>{message1}</h1> : <h1>{message2}</h1>}
       {pizzaData.map((item) => {
+        const { name, photoName, ingredients, price } = item;
         return (
-          <section key={item.name} className='pizza'>
-            {/* <Card
-              name={item.name}
-              image={item.photoName}
-              ingredients={item.ingredients}
-              price={item.price}
-            /> */}
-          </section>
+          <li key={name} className='pizza'>
+            <Card
+              name={name}
+              image={photoName}
+              ingredients={ingredients}
+              price={price}
+            />
+          </li>
         );
       })}
     </div>
@@ -53,7 +54,13 @@ const SkillCard = () => {
 };
 const SkillList = () => {
   return (
-    <section>
+    <section style={{ width: "50%" }}>
+      <h3>Ayodele Agbowuro</h3>
+      <h6>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore
+        voluptatum quos sed numquam, nesciunt repellendus atque officiis commodi
+        cumque, qui earum illum veritatis hic?
+      </h6>
       <Skill name='html' emoji='✅' bgColor='yellow' />
       <Skill name='css' emoji='💪' bgColor='green' />
     </section>
