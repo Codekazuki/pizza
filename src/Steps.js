@@ -6,10 +6,10 @@ const messages = ["Learn React", "Apply for Jobs", "Invest your new income"];
 const Steps = () => {
   const [step, setStep] = useState(1);
   const handleNext = () => {
-    setStep((s) => s + 1);
+    if (step < 3) setStep((s) => s + 1);
   };
   const handlePrevious = () => {
-    setStep((s) => s - 1);
+    if (step > 1) setStep((s) => s - 1);
   };
 
   return (
