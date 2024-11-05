@@ -17,10 +17,10 @@ const Steps = () => {
     if (step > 1) setStep((s) => s - 1);
   };
   const handleToggle = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((is) => !is);
   };
   return (
-    <div>
+    <>
       <button className='close' onClick={handleToggle}>
         {isOpen ? "CLOSE" : "OPEN STEPS"}
       </button>
@@ -55,7 +55,7 @@ const Steps = () => {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
