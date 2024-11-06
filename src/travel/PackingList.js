@@ -5,21 +5,22 @@ const initialItems = [
   { id: 3, description: "Ball", quantity: 1, packed: true },
 ];
 
-const PackingList = ({ items }) => {
+const PackingList = ({ items, onDeleteItem, onClearList }) => {
   return (
     <div className='list'>
       <ul>
         {items.map((item) => {
-          return <Item key={item.id} item={item} />;
+          return <Item key={item.id} onDeleteItem={onDeleteItem} item={item} />;
         })}
       </ul>
+      <button onClick={() => onClearList()}>ClearList</button>
     </div>
   );
 };
 
 export default PackingList;
 
-const Item = ({ item }) => {
+const Item = ({ item, onDeleteItem }) => {
   return (
     <li>
       <span
@@ -30,7 +31,7 @@ const Item = ({ item }) => {
         {" "}
         {item.quantity} {item.description}
       </span>
-      {item.packed ? <button>❎</button> : <button>❌</button>}
+      <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
   );
 };
