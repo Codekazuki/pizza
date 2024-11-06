@@ -1,16 +1,21 @@
 import React from "react";
 
 const Stats = ({ items }) => {
+  const numItems = items.length;
   const numPacked = items.filter((item) => item.packed).length;
-  console.log(numPacked);
+  const percent = Math.round((numPacked / numItems) * 100);
   return (
     <footer className='stats'>
-      {items.length === 0
+      {numItems === 0
         ? "You have not selected anything"
-        : items.length === 1
+        : numItems === 1
         ? "You have 1 item on your list"
-        : `You have ${items.length} items on your list`}
-      <h4>You have parked {numPacked} items</h4>
+        : `You have ${numItems} items on your list`}
+      <h4>
+        {numPacked === 0
+          ? "Start packing"
+          : `You have parked ${numPacked} items which is ${percent} %`}
+      </h4>
     </footer>
   );
 };
