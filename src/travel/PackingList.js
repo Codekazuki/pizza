@@ -5,11 +5,11 @@ const initialItems = [
   { id: 3, description: "Ball", quantity: 1, packed: true },
 ];
 
-const PackingList = () => {
+const PackingList = ({ items }) => {
   return (
     <div className='list'>
       <ul>
-        {initialItems.map((item) => {
+        {items.map((item) => {
           return <Item key={item.id} item={item} />;
         })}
       </ul>
