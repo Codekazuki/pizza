@@ -1,11 +1,17 @@
 import React from "react";
 import "./travel.css";
 import Logo from "./Logo";
+import Form from "./Form";
+import PackingList from "./PackingList";
+import Stats from "./Stats";
 
 const Travel = () => {
   return (
     <div className='app'>
       <Logo />
+      <Form />
+      <PackingList />
+      <Stats />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 const PackingList = () => {
-  return <div>PackingList</div>;
+  return <div className='list'>PackingList</div>;
 };
 
 export default PackingList;
