@@ -1,8 +1,13 @@
 import React from "react";
 import "./travel.css";
+import Logo from "./Logo";
 
 const Travel = () => {
-  return <div>Travel</div>;
+  return (
+    <div className='app'>
+      <Logo />
+    </div>
+  );
 };
 
 export default Travel;
