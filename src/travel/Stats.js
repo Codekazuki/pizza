@@ -7,7 +7,7 @@ const Stats = ({ items }) => {
   return (
     <footer className='stats'>
       {numItems === 0
-        ? "You have not selected anything"
+        ? "You have not packed anything"
         : numItems === 1
         ? "You have 1 item on your list"
         : `You have ${numItems} items on your list`}

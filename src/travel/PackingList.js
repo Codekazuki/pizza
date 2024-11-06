@@ -30,13 +30,15 @@ const PackingList = ({ items, onDeleteItem, onClearList, onToggleItem }) => {
           );
         })}
       </ul>
-      <div className='actions'>
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-          <option value='input'> Sort by input order</option>
-          <option value='description'> Sort by description</option>
-          <option value='packed'> Sort by packed</option>
-        </select>
-      </div>
+      {items.length > 0 && (
+        <div className='actions'>
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <option value='input'> Sort by input order</option>
+            <option value='description'> Sort by description</option>
+            <option value='packed'> Sort by packed</option>
+          </select>
+        </div>
+      )}
       {items.length > 0 ? (
         <button onClick={() => onClearList()}>ClearList</button>
       ) : (
