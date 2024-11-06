@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Item = ({ item, onDeleteItem, onToggleItem }) => {
-  const [packed, setPacked] = useState(null);
+  //   const [packed, setPacked] = useState(null);
   return (
     <li>
       <input
