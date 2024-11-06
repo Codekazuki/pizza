@@ -7,6 +7,7 @@ import Stats from "./Stats";
 
 const Travel = () => {
   const [items, setItems] = useState([]);
+
   const handleAddItems = (item) => {
     setItems((items) => [...items, item]);
   };
@@ -34,7 +35,7 @@ const Travel = () => {
         onDeleteItem={handleDeleteItem}
         onClearList={handleClearList}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 };
