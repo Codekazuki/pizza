@@ -7,7 +7,7 @@ const Form = ({ onAddItems }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!description) return;
-    const newItem = { quantity, description, packed: false, date: Date.now() };
+    const newItem = { quantity, description, packed: false, id: Date.now() };
     onAddItems(newItem);
     setQuantity(1);
     setDescription("");
