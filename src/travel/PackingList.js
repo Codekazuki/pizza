@@ -1,4 +1,5 @@
 import React from "react";
+import Item from "./Item";
 
 const PackingList = ({ items, onDeleteItem, onClearList }) => {
   return (
@@ -14,18 +15,3 @@ const PackingList = ({ items, onDeleteItem, onClearList }) => {
 };
 
 export default PackingList;
-
-const Item = ({ item, onDeleteItem }) => {
-  return (
-    <li>
-      <span
-        style={
-          item.packed ? { textDecoration: "line-through", color: "green" } : {}
-        }
-      >
-        {item.quantity} {item.description}
-      </span>
-      <button onClick={() => onDeleteItem(item.id)}>❌</button>
-    </li>
-  );
-};
