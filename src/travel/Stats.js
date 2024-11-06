@@ -13,7 +13,7 @@ const Stats = ({ items }) => {
         : `You have ${numItems} items on your list`}
       <h4>
         {numPacked === 0
-          ? "Start packing"
+          ? ""
           : `You have parked ${numPacked} items which is ${percent} %`}
       </h4>
     </footer>
