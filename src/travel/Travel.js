@@ -6,6 +6,7 @@ import PackingList from "./PackingList";
 import Stats from "./Stats";
 
 const Travel = () => {
+  const [items, setItems] = useState([]);
   const handleAddItems = (item) => {
     setItems((items) => [...items, item]);
   };
@@ -16,12 +17,19 @@ const Travel = () => {
   const handleClearList = () => {
     setItems([]);
   };
-  const [items, setItems] = useState([]);
+  const toggleItem = (id) => {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  };
   return (
     <div className='app'>
       <Logo />
       <Form onAddItems={handleAddItems} />
       <PackingList
+        onToggleItem={toggleItem}
         items={items}
         onDeleteItem={handleDeleteItem}
         onClearList={handleClearList}
