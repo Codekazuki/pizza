@@ -1,8 +1,11 @@
 import React from "react";
 
 const Form = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
-    <form className='add-form'>
+    <form className='add-form' onSubmit={handleSubmit}>
       <h3>What do you to pack?</h3>
       <select name='' id=''>
         {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
