@@ -1,7 +1,12 @@
 import React from "react";
+import Reset from "./Reset";
 
 const TipCalculator = () => {
-  return <div>TipCalculator</div>;
+  return (
+    <div>
+      <Reset />
+    </div>
+  );
 };
 
 export default TipCalculator;
