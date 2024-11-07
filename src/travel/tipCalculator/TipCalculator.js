@@ -8,6 +8,10 @@ const TipCalculator = () => {
   const [bill, setBill] = useState("");
   const [percentage1, setPercentage1] = useState(0);
   const [percentage2, setPercentage2] = useState(0);
+  const averagePercentage = (percentage1 + percentage2) / 2;
+  const tip = (averagePercentage * bill) / 100;
+  const totalAmount = bill + tip;
+
   return (
     <div>
       <BillInput bill={bill} setBill={setBill} />
@@ -19,7 +23,7 @@ const TipCalculator = () => {
       <SelectPercentage percentage={percentage2} onSelect={setPercentage2}>
         How do your friend like the service?
       </SelectPercentage>
-      <Output bill={bill} />
+      <Output totalAmount={totalAmount} bill={bill} tip={tip} />
       <Reset />
     </div>
   );

@@ -1,9 +1,13 @@
 import React from "react";
 
-const Output = ({ bill }) => {
+const Output = ({ bill, tip, totalAmount }) => {
   return (
     <div>
-      <h3>you paid {bill} amount</h3>
+      <h3>
+        you paid {totalAmount} <br />
+        your bill is {bill} <br />
+        your tip is:{tip}
+      </h3>
     </div>
   );
 };
