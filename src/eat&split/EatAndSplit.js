@@ -1,4 +1,5 @@
-import React from "react";
+import "./eat&split.css";
+import FriendsList from "./FriendsList";
 const initialFriends = [
   {
     id: 118836,
@@ -19,8 +20,16 @@ const initialFriends = [
     balance: 0,
   },
 ];
+const friends = initialFriends;
+
 const EatAndSplit = () => {
-  return <div>EatAndSplit</div>;
+  return (
+    <div className='app'>
+      <div className='sidebar'>
+        <FriendsList friends={friends} />
+      </div>
+    </div>
+  );
 };
 
 export default EatAndSplit;

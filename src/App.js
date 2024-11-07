@@ -1,4 +1,3 @@
-import React from "react";
 import EatAndSplit from "./eat&split/EatAndSplit";
 // import TipCalculator from "./tipCalculator/TipCalculator";
 // import Pizza from "./Pizza";
