@@ -1,5 +1,6 @@
 import React from "react";
-import TipCalculator from "./tipCalculator/TipCalculator";
+import EatAndSplit from "./eat&split/EatAndSplit";
+// import TipCalculator from "./tipCalculator/TipCalculator";
 // import Pizza from "./Pizza";
 // import Steps from "./Steps";
 // import DateCounter from "./DateCounter";
@@ -8,7 +9,8 @@ import TipCalculator from "./tipCalculator/TipCalculator";
 const App = () => {
   return (
     <div>
-      <TipCalculator />
+      <EatAndSplit />
+      {/* <TipCalculator /> */}
       {/* <Travel /> */}
       {/* <DateCounter /> */}
       {/* <Steps /> */}
