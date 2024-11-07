@@ -1,5 +1,5 @@
 import React from "react";
-import TipCalculator from "./travel/tipCalculator/TipCalculator";
+import TipCalculator from "./tipCalculator/TipCalculator";
 // import Pizza from "./Pizza";
 // import Steps from "./Steps";
 // import DateCounter from "./DateCounter";
