@@ -4,9 +4,9 @@ const Output = ({ bill, tip, totalAmount }) => {
   return (
     <div>
       <h3>
-        you paid {totalAmount} <br />
-        your bill is {bill} <br />
-        your tip is:{tip}
+        Your bill is {bill} <br />
+        You decided to tip :{tip} <br />
+        You would pay {totalAmount}
       </h3>
     </div>
   );
