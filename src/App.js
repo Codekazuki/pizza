@@ -1,13 +1,15 @@
 import React from "react";
+import TipCalculator from "./travel/tipCalculator/TipCalculator";
 // import Pizza from "./Pizza";
 // import Steps from "./Steps";
 // import DateCounter from "./DateCounter";
-import Travel from "./travel/Travel";
+// import Travel from "./travel/Travel";
 
 const App = () => {
   return (
     <div>
-      <Travel />
+      <TipCalculator />
+      {/* <Travel /> */}
       {/* <DateCounter /> */}
       {/* <Steps /> */}
       {/* <Pizza /> */}
