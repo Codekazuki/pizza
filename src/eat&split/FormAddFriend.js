@@ -8,7 +8,7 @@ const FormAddFriend = () => {
       <input type='text' />
       <label>Image URL</label>
       <input type='text' />
-      <Button>AddFriend</Button>
+      <Button>Add</Button>
     </form>
   );
 };
