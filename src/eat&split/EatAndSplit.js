@@ -42,6 +42,16 @@ const EatAndSplit = () => {
     setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
     setShowAddFriend(false);
   };
+  const handleSplitBill = (value) => {
+    setFriends((friends) =>
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      )
+    );
+    setSelectedFriend(null);
+  };
   return (
     <div className='app'>
       <div className='sidebar'>
@@ -55,7 +65,12 @@ const EatAndSplit = () => {
           {showAddFriend ? "Close" : "Add Friend"}
         </Button>
       </div>
-      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
+      {selectedFriend && (
+        <FormSplitBill
+          onSplitBill={handleSplitBill}
+          selectedFriend={selectedFriend}
+        />
+      )}
     </div>
   );
 };
