@@ -24,19 +24,22 @@ const initialFriends = [
     balance: 0,
   },
 ];
-const friends = initialFriends;
 
+const friend = initialFriends;
 const EatAndSplit = () => {
+  const [friends, setFriends] = useState(friend);
   const [showAddFriend, setShowAddFriend] = useState(false);
   const handleShowAddFriend = () => {
     setShowAddFriend(!showAddFriend);
   };
-
+  const handleAddFriend = () => {
+    setFriends((friends) => [...friends, friend]);
+  };
   return (
     <div className='app'>
       <div className='sidebar'>
-        <FriendsList friends={friends} />
-        {showAddFriend && <FormAddFriend />}
+        <FriendsList friend={friend} />
+        {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button onClick={handleShowAddFriend}>
           {showAddFriend ? "Close" : "Add Friend"}
         </Button>

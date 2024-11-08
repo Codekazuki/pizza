@@ -1,11 +1,11 @@
 import React from "react";
 import Friend from "./Friend";
 
-const FriendsList = ({ friends }) => {
+const FriendsList = ({ friend }) => {
   return (
     <ul>
-      {friends.map((friends) => {
-        return <Friend friends={friends} key={friends.id} />;
+      {friend.map((friend) => {
+        return <Friend friend={friend} key={friend.id} />;
       })}
     </ul>
   );

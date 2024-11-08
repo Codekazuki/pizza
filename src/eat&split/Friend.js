@@ -1,21 +1,21 @@
 import React from "react";
 import Button from "./Button";
 
-const Friend = ({ friends }) => {
+const Friend = ({ friend }) => {
   return (
     <li>
-      <img src={friends.image} alt='' />
-      <h3>{friends.name}</h3>
-      {friends.balance === 0 && <p> You and {friends.name} are even </p>}
-      {friends.balance > 0 && (
+      <img src={friend.image} alt='' />
+      <h3>{friend.name}</h3>
+      {friend.balance === 0 && <p> You and {friend.name} are even </p>}
+      {friend.balance > 0 && (
         <p className='green'>
-          {friends.name} owes you #{friends.balance}{" "}
+          {friend.name} owes you #{friend.balance}{" "}
         </p>
       )}
-      {friends.balance < 0 && (
+      {friend.balance < 0 && (
         <p className='red'>
           {" "}
-          You owe {friends.name} #{Math.abs(friends.balance)}
+          You owe {friend.name} #{Math.abs(friend.balance)}
         </p>
       )}
       <Button>Select</Button>
