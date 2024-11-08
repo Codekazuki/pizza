@@ -40,6 +40,7 @@ const EatAndSplit = () => {
   const handleSelection = (friend) => {
     // setSelectedFriend(friend);
     setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
+    setShowAddFriend(false);
   };
   return (
     <div className='app'>
