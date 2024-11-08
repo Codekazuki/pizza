@@ -5,7 +5,7 @@ const FriendsList = ({ friends }) => {
   return (
     <ul>
       {friends.map((friends) => {
-        return <Friend friends={friends} />;
+        return <Friend friends={friends} key={friends.id} />;
       })}
     </ul>
   );
