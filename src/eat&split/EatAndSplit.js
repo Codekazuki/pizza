@@ -1,6 +1,7 @@
 import Button from "./Button";
 import "./eat&split.css";
 import FormAddFriend from "./FormAddFriend";
+import FormSplitBill from "./FormSplitBill";
 import FriendsList from "./FriendsList";
 const initialFriends = [
   {
@@ -32,6 +33,7 @@ const EatAndSplit = () => {
       </div>
       <FormAddFriend />
       <Button>Add Friend</Button>
+      <FormSplitBill />
     </div>
   );
 };
