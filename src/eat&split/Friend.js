@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-const Friend = ({ friend }) => {
+const Friend = ({ friend, onSelection }) => {
   return (
     <li>
       <img src={friend.image} alt={friend.name} />
@@ -18,7 +18,7 @@ const Friend = ({ friend }) => {
           You owe {friend.name} {Math.abs(friend.balance)}
         </p>
       )}
-      <Button>Select</Button>
+      <Button onClick={() => onSelection(friend)}>Select</Button>
     </li>
   );
 };

@@ -29,22 +29,27 @@ const friend = initialFriends;
 const EatAndSplit = () => {
   const [friends, setFriends] = useState(friend);
   const [showAddFriend, setShowAddFriend] = useState(false);
+  const [selectedFriend, setSelectedFriend] = useState(null);
   const handleShowAddFriend = () => {
     setShowAddFriend(!showAddFriend);
   };
   const handleAddFriend = (friend) => {
     setFriends((friends) => [...friends, friend]);
+    setShowAddFriend(false);
+  };
+  const handleSelection = (friend) => {
+    setSelectedFriend(friend);
   };
   return (
     <div className='app'>
       <div className='sidebar'>
-        <FriendsList friend={friends} />
+        <FriendsList friend={friends} onSelection={handleSelection} />
         {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button onClick={handleShowAddFriend}>
           {showAddFriend ? "Close" : "Add Friend"}
         </Button>
       </div>
-      <FormSplitBill />
+      {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} />}
     </div>
   );
 };
