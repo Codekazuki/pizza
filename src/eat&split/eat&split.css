@@ -129,7 +129,7 @@ form {
 .form-add-friend {
   grid-template-columns: 1fr 1.5fr;
   margin-bottom: 1.6rem;
-  padding: 1.2rem;
+  padding: 1rem;
 }
 .form-split-bill {
   grid-template-columns: 1fr 12rem;
@@ -142,7 +142,7 @@ label {
 
 label::first-letter {
   display: inline-block;
-  margin-right: 4px;
+  /* margin-right: 4px; */
   font-size: 1.8rem;
 }
 
