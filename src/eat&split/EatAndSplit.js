@@ -38,12 +38,17 @@ const EatAndSplit = () => {
     setShowAddFriend(false);
   };
   const handleSelection = (friend) => {
-    setSelectedFriend(friend);
+    // setSelectedFriend(friend);
+    setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
   };
   return (
     <div className='app'>
       <div className='sidebar'>
-        <FriendsList friend={friends} onSelection={handleSelection} />
+        <FriendsList
+          friend={friends}
+          onSelection={handleSelection}
+          selectedFriend={selectedFriend}
+        />
         {showAddFriend && <FormAddFriend onAddFriend={handleAddFriend} />}
         <Button onClick={handleShowAddFriend}>
           {showAddFriend ? "Close" : "Add Friend"}
