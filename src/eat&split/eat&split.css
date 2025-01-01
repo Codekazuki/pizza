@@ -24,14 +24,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-/* 
-.app {
-  min-height: 66vh;
-  display: grid;
-  grid-template-columns: 34rem 44rem;
-  column-gap: 4rem;
-  align-items: start;
-} */
+
 .app {
   width: 100%;
   max-width: 90vw;
@@ -70,16 +63,17 @@ body {
   display: grid;
   grid-template-columns: 4.8rem 1fr auto;
   align-items: center;
-  column-gap: 1.6rem;
-
+  column-gap: 1rem;
   padding: 1.2rem;
   border-radius: 7px;
   transition: 0.5s;
 }
 
-.selected,
 .sidebar li:hover {
   background-color: var(--color-lightest);
+}
+.selected {
+  background-color: var(--color-light);
 }
 
 .sidebar li img {
@@ -175,4 +169,15 @@ form h2 {
   text-transform: uppercase;
   letter-spacing: -0.5px;
   margin-bottom: 1.6rem;
+}
+@media only screen and (max-width: 767px) {
+  body {
+    background-color: lightgreen;
+  }
+  .app {
+    width: 100%;
+    max-width: 90vw;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
