@@ -27,13 +27,9 @@ body {
 
 .app {
   width: 100%;
-  max-width: 90vw;
-  min-height: 66vh;
   display: grid;
-  grid-template-columns: 34rem 44rem;
-  column-gap: var(--space-medium);
-  align-items: start;
-  overflow: hidden;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
 }
 .button {
   background-color: var(--color-medium);
@@ -176,8 +172,7 @@ form h2 {
   }
   .app {
     width: 100%;
-    max-width: 90vw;
-    display: grid;
-    grid-template-columns: 1fr;
+    max-width: 100vw;
+    display: flex;
   }
 }
